@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LADCP</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">LADCP</h1>
+</header>
+<h2 id="ladcp-data">LADCP data</h2>
+<p>Archives - <a
+href="https://data.noaa.gov/onestop/collections/details/078e151c-56bd-4d5d-98ec-2ec3d6e8c130">NCEI</a>
+Follow https://www.ncei.noaa.gov ¨ Access Data ¨ Launch NOAA Onestop
+¨ search “LADCP” <a
+href="https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:WOCE-LADCP">Metadata</a>
+Not clear how to download the data (Thu 11/11/2021).</p>
+<ul>
+<li><p><a href="https://cchdo.github.io/hydrotable3/">US GO-SHIP
+Hydrotable</a></p></li>
+<li><p><a href="http://www.jamstec.go.jp/j/database/">JAMSTEC (currently
+unavailale)</a> processed ASCII output only. MATLAB files may be
+available upon request to kats.</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">WOCE SECTION</th>
+<th style="text-align: right;">YEAR</th>
+<th style="text-align: right;">EXPO</th>
+<th style="text-align: center;">SOURCE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">P01</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">49NZ20070724</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P01/P14N</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">49NZ20071008</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P01</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">49NZ20140709/49NZ20140717</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P02</td>
+<td style="text-align: right;">2004</td>
+<td style="text-align: right;">318M200406</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P02</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">318M20130321</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P03E</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">49NZ20051031</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P03C</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">49NZ20051127</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P03W</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">49NZ20060120</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P06W</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">318M20091121</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P06E</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">318M20100105</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P06W</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">320620170703</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P06E</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">320620170820</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P10</td>
+<td style="text-align: right;">1993</td>
+<td style="text-align: right;">3250TN026_1</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P10</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">49NZ20050525</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P10</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">49NZ20111220</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P10</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">49NZ20120113</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P13</td>
+<td style="text-align: right;">1992</td>
+<td style="text-align: right;">3220CGC92_0/_1/_2</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P14</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">49NZ20071122</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P14N</td>
+<td style="text-align: right;">1993</td>
+<td style="text-align: right;">325023_1</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P14S/P15S</td>
+<td style="text-align: right;">1996</td>
+<td style="text-align: right;">31DSCG96_1</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P14S</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">49NZ20121128</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P16C</td>
+<td style="text-align: right;">1991</td>
+<td style="text-align: right;">31WTTUNES_3</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P16S</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">33RR200501</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P16N</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">325020060213</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P16S</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">320620140320</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P16N</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">33RO20150525</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P16C</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">33RO20150410</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P17C</td>
+<td style="text-align: right;">1991</td>
+<td style="text-align: right;">31WTTUNES_1</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P17N</td>
+<td style="text-align: right;">1993</td>
+<td style="text-align: right;">325021_1</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P17E</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">49NZ20170208</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P19C</td>
+<td style="text-align: right;">1993</td>
+<td style="text-align: right;">316N138_12</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P18</td>
+<td style="text-align: right;">1991</td>
+<td style="text-align: right;">31DSCG94_1/_2/_3</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P18</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">33RO20161119</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P21E</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">49NZ20090410</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P21W</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">49NZ20090521</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P31</td>
+<td style="text-align: right;">1993</td>
+<td style="text-align: right;">3250031_1</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I01W</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_11</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I01E</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_12</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I02E</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_14</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I02W</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_15</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I03</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_8</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I04/I05W/I07C</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_9</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I05</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">33RR20090320</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I06S</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">33RR20080204</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I07N</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_10</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I07N</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">33RO20180423</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I07S</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">49NZ20191229</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I08S/I09S</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_5</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I08N/I05E</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_7</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I08S</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">33RR20070204</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I08S</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">33RR20160208</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I08N</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">49NZ20191205</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I09N</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_6</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I09N</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">33RR20070322</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I09N</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">33RR20160321</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I10</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">316N145_13</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I10</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">49NZ20151223</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A10</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">33RO20110926</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A16N</td>
+<td style="text-align: right;">2003</td>
+<td style="text-align: right;">33RO200306_01</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A16S</td>
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">33RO200501</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A16S</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">33RO20131223</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A16N</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">33RO20130803</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A20</td>
+<td style="text-align: right;">1997</td>
+<td style="text-align: right;">316N151_3</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A20</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">33AT20120419</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A22</td>
+<td style="text-align: right;">1997</td>
+<td style="text-align: right;">316N151_4</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A22</td>
+<td style="text-align: right;">2003</td>
+<td style="text-align: right;">316N200310</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A22</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">33AT20120324</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AR24</td>
+<td style="text-align: right;">1996</td>
+<td style="text-align: right;">316N147_2</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AR24</td>
+<td style="text-align: right;">1997</td>
+<td style="text-align: right;">316N154_2</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A24</td>
+<td style="text-align: right;">1997</td>
+<td style="text-align: right;">316N151_2</td>
+<td style="text-align: center;">NCEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S04P</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">320620110219</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S04P</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">320620180309</td>
+<td style="text-align: center;">HYDRO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S04I</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">49NZ20121128/130106</td>
+<td style="text-align: center;">JAM</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
