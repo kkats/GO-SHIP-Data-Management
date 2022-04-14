@@ -14,7 +14,7 @@
     ul.task-list{list-style: none;}
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="ss=https://cdn.simplecss.org/simple.min.css" />
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -25,15 +25,17 @@
 </header>
 <h1 id="archives">Archives</h1>
 <ul>
-<li><a
-href="https://data.noaa.gov/onestop/collections/details/078e151c-56bd-4d5d-98ec-2ec3d6e8c130">NCEI</a></li>
-</ul>
-<p>Follow https://www.ncei.noaa.gov → Access Data → Launch NOAA Onestop
-→ search “LADCP”</p>
-<p><a
-href="https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:WOCE-LADCP">Metadata</a></p>
-<p>Not clear how to download the data (Thu 11/11/2021).</p>
+<li><p><a
+href="https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:WOCE-LADCP">NCEI</a></p>
 <ul>
+<li>Follow https://www.ncei.noaa.gov → Access Data → Launch NOAA Onestop
+→ search “LADCP”.</li>
+<li>To download data, try <a
+href="https://www.ncei.noaa.gov/metadata/granule/geoportal/?from=0&amp;size=10&amp;esdsl=%7B%22query%22%3A%7B%22bool%22%3A%7B%22must%22%3A%5B%7B%22query_string%22%3A%7B%22analyze_wildcard%22%3Atrue%2C%22query%22%3A%22fileid%3AWOCE-LADCP.*%22%7D%7D%5D%7D%7D%7D#searchPanel">Granule
+Search</a> → Download (HTTP)</li>
+<li>Processed and raw data (including CTD and GPS timeseries) are
+available!</li>
+</ul></li>
 <li><p><a href="https://cchdo.github.io/hydrotable3/">US GO-SHIP
 Hydrotable</a></p></li>
 <li><p><a href="http://www.jamstec.go.jp/j/database/">JAMSTEC (currently
